@@ -1,0 +1,47 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .header__content {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+
+    .logo__sub {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 17px;
+      color: #9d9d9d;
+    }
+    .header__title {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 24px;
+      text-transform: uppercase;
+      color: #000000;
+    }
+  }
+}
+
+.header__loghin-inner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header__login-box {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  align-items: center;
+  .header__login-spn {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    color: #5c5c5c;
+  }
+}
