@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.scss";
-import "macro-css"
+import "macro-css";
 
 export const App = () => {
   return (
@@ -28,6 +28,14 @@ export const App = () => {
             </div>
           </div>
         </header>
+
+        <main className="name">
+          <div className="container">
+            <section className="products">
+              <h1 className="products__title">Все кроссовки</h1>
+            </section>
+          </div>
+        </main>
       </div>
     </>
   );
