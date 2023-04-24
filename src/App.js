@@ -34,6 +34,7 @@ export const App = () => {
             <section className="products">
               <h1 className="products__title">Все кроссовки</h1>
             </section>
+            
           </div>
         </main>
       </div>
