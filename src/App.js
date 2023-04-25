@@ -56,9 +56,9 @@ export const App = () => {
                     <span className="card__list-sub">Цена:</span>
                     <p className="card__list-price">12 999 руб.</p>
                   </div>
-                  <div className="card-button__wrap">
+                  <button className="card-button__wrap">
                     <img src="/images/add-item.svg" alt="" />
-                  </div>
+                  </button>
                 </div>
               </li>
             </ul>
