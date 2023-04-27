@@ -46,6 +46,9 @@ export const App = () => {
 
               <ul className="card-list">
                 <li className="card-list__item">
+                  <div className="favorite">
+                  <img src="images/heart-unlike.svg" alt="unlike" />
+                  </div>
                   <img
                     src="/images/card-image.jpg"
                     alt=""

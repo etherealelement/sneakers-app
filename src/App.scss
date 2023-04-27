@@ -119,6 +119,12 @@
   padding-bottom: 40px;
 }
 
+.favorite {
+  position: absolute;
+  cursor: pointer;
+  transform: translateX(-60px) translateY(20px);
+}
+
 .card-list__item {
   max-width: 210px;
   background: #ffffff;
@@ -129,6 +135,7 @@
   justify-content: center;
   flex-wrap: wrap;
   margin-bottom: 40px;
+  transition: box-shadow 0.2s ease-in-out, transform 0.2s ease;
 
   .card-list__title {
     font-family: "Inter";
@@ -169,13 +176,13 @@
     justify-content: space-between;
     padding-bottom: 34px;
   }
+
+  &:hover {
+    box-shadow: 0px 14px 30px rgba(0, 0, 0, 0.05);
+    transform: translateY(-5px);
+  }
 }
 
-.card-list__item:hover {
-  box-shadow: 0px 14px 30px rgba(0, 0, 0, 0.05);
-  border-radius: 40px;
-  transition: all 0.3s;
-}
 
 .card-button__wrap {
   border: none;
