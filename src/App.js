@@ -6,6 +6,80 @@ export const App = () => {
   return (
     <>
       <div className="wrapper">
+      <div className="overlay">
+          <div className="drawer">
+            <div className="drawer__inner">
+              <h2 className="drawer__title">Корзина
+              <img
+                      src="images/btn-close.svg"
+                      className="close-btn"
+                      alt=""
+                    />
+              </h2>
+
+              <ul className="cart">
+                <li className="cart__item">
+                  <img
+                    width="70px"
+                    height="70px"
+                    src="images/shop-icon-2.jpg"
+                    alt="shop"
+                  />
+                  <div className="cart__item-box">
+                    <p className="cart__item-title">
+                      Мужские Кроссовки Nike Air Max 270
+                    </p>
+                    <b className="cart__item-sub">12 999 руб.</b>
+                  </div>
+                  <button className="delete-button">
+                    <img
+                      src="images/btn-close.svg"
+                      className="close-btn"
+                      alt=""
+                    />
+                  </button>
+                </li>
+                <li className="cart__item">
+                  <img
+                    width="70px"
+                    height="70px"
+                    src="images/shop-icon-3.jpg"
+                    alt="shop"
+                  />
+                  <div className="cart__item-box">
+                    <p className="cart__item-title">
+                      Мужские Кроссовки Nike Air Max 270
+                    </p>
+                    <b className="cart__item-sub">8 499 руб.</b>
+                  </div>
+                  <button className="delete-button">
+                    <img
+                      src="images/btn-close.svg"
+                      alt=""
+                      className="close-btn"
+                    />
+                  </button>
+                </li>
+              </ul>
+            </div>
+
+            <div className="total">
+              <div className="total-1">
+                <p className="total__title">Итого: </p>
+                <div className="border"></div>
+                <p className="total__price">21 498 руб.</p>
+              </div>
+              <div className="total-2">
+                <p className="total__title">Налог 5%:</p>
+                <div className="border"></div>
+                <p className="total__price">1074 руб.</p>
+              </div>
+              <button className="button__buy">Оформить заказ
+              <img src="/images/arrow-left.svg" alt="arrow-icon" />
+              </button>
+            </div>
+          </div>
+        </div>
         <header className="header">
           <div className="header__content">
             <a href="#">
@@ -35,7 +109,11 @@ export const App = () => {
               <div className="products-title__wrap">
                 <h1 className="products__title">Все кроссовки</h1>
                 <div className="search-block">
-					<img src="/images/search.svg" alt="Search" className="search"/>
+                  <img
+                    src="/images/search.svg"
+                    alt="Search"
+                    className="search"
+                  />
                   <input
                     type="text"
                     placeholder="Поиск..."
@@ -47,7 +125,7 @@ export const App = () => {
               <ul className="card-list">
                 <li className="card-list__item">
                   <div className="favorite">
-                  <img src="images/heart-unlike.svg" alt="unlike" />
+                    <img src="images/heart-unlike.svg" alt="unlike" />
                   </div>
                   <img
                     src="/images/card-image.jpg"
@@ -140,6 +218,7 @@ export const App = () => {
               </ul>
             </section>
           </div>
+          
         </main>
       </div>
     </>
