@@ -1,7 +1,7 @@
 import React from "react";
 import "./card.module.scss";
 
-function Card() {
+function Card({name, type, image}) {
   return (
     <>
       <li className="card-list__item">
@@ -9,14 +9,14 @@ function Card() {
           <img src="images/heart-unlike.svg" alt="unlike" />
         </div>
         <img
-          src="/images/card-image.jpg"
+          src={image}
           alt=""
           className="card-list__img"
           width="133px"
         />
         <div className="card-list__inner">
-          <p className="card-list__title">Мужские Кроссовки</p>
-          <p className="card-list__subtitle">Nike Blazer Mid Suede</p>
+          <p className="card-list__title">{type}</p>
+          <p className="card-list__subtitle">{name}</p>
         </div>
         <div className="card-wrap">
           <div className="card-inner">
