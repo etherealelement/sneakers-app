@@ -5,6 +5,7 @@ import Card from "./components/card/Card";
 import Header from "./components/header/Header";
 import Drawer from "./components/drawer/Drawer";
 
+
 const Product = [
   {
     type: "Мужские кроссовки",
@@ -16,19 +17,19 @@ const Product = [
   {
     type: "Мужские кроссовки",
     name: "Nike Air Max 270",
-    price: 12344,
+    price: 15000,
     id: 2,
     image: "/images/shop-icon-2.jpg"
   },
   {
     type: "Мужские кроссовки",
     name: "Nike Blazer Mid Suede",
-    price: 12344,
+    price: 6999,
     id: 3,
     image: "/images/shop-icon-3.jpg"
   },
   {
-    type: "Мужские кроссовки",
+    type: "Женские кроссовки",
     name: "Under Armour Curry 8",
     price: 12344,
     id: 4,
@@ -62,7 +63,7 @@ export const App = () => {
                 </div>
               </div>
 
-              <ul className="card-list">{Product.map((item) => <Card type={item.type} name={item.name} key={item.id} image={item.image}></Card>)}</ul>
+              <ul className="card-list">{Product.map((item) => <Card type={item.type} name={item.name} key={item.id} image={item.image} price={item.price}></Card>)}</ul>
             </section>
           </div>
         </main>

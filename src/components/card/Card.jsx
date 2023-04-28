@@ -1,7 +1,12 @@
 import React from "react";
 import "./card.module.scss";
 
-function Card({name, type, image}) {
+function Card({name, type, image, price}) {
+
+  const onClickBtn = () => {
+    return alert(name)
+  }
+
   return (
     <>
       <li className="card-list__item">
@@ -21,9 +26,9 @@ function Card({name, type, image}) {
         <div className="card-wrap">
           <div className="card-inner">
             <span className="card__list-sub">Цена:</span>
-            <p className="card__list-price">12 999 руб.</p>
+            <p className="card__list-price">{price} руб.</p>
           </div>
-          <button className="card-button__wrap">
+          <button className="card-button__wrap" onClick={onClickBtn}>
             <img src="/images/add-item.svg" alt="" />
           </button>
         </div>
