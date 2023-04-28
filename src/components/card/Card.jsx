@@ -1,16 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./card.module.scss";
 
 function Card({name, type, image, price}) {
 
-  const onClickBtn = () => {
-    return alert(name)
+  const [add, setAdded] = useState(false);
+
+  const handleClick = () => {
+    setAdded(!add);
   }
+
 
   return (
     <>
       <li className={styles.cardList}>
-        <div className="favorite">
+        <div className="favorite" >
           <img src="images/heart-unlike.svg" alt="unlike" />
         </div>
         <img
@@ -28,8 +31,8 @@ function Card({name, type, image, price}) {
             <span className={styles.CardListSub}>Цена:</span>
             <p className={styles.CardListPrice}>{price} руб.</p>
           </div>
-          <button className={styles.ButtonInner} onClick={onClickBtn}>
-            <img src="/images/add-item.svg" alt="" />
+          <button className={styles.ButtonInner} onClick={handleClick}>
+            <img src= {add ? "/images/added-btn.svg" : "/images/add-item.svg"} alt={name}/>
           </button>
         </div>
       </li>

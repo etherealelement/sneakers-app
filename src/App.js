@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import "./App.scss";
 import "macro-css";
 import Card from "./components/card/Card";
@@ -37,7 +38,10 @@ const Product = [
   },
 ];
 
+
+
 export const App = () => {
+
   return (
     <>
       <div className="wrapper">
@@ -63,7 +67,14 @@ export const App = () => {
                 </div>
               </div>
 
-              <ul className="card-list">{Product.map((item) => <Card type={item.type} name={item.name} key={item.id} image={item.image} price={item.price}></Card>)}</ul>
+              <ul className="card-list">{Product.map((item) => <Card type={item.type} 
+              name={item.name} 
+              key={item.id} 
+              image={item.image} 
+              price={item.price}
+              onClickFavorite={()=> alert("Добавлено в закладки")}
+              onClickAdd={()=> alert("Добавлено в корзину")}
+              ></Card>)}</ul>
             </section>
           </div>
         </main>
