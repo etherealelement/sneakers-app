@@ -1,4 +1,4 @@
-.card-list__item {
+.cardList {
   max-width: 210px;
   background: #ffffff;
   border: 1px solid #f3f3f3;
@@ -10,26 +10,12 @@
   margin-bottom: 40px;
   transition: box-shadow 0.2s ease-in-out, transform 0.2s ease;
 
-  .card-list__title {
+  .cardListTitle {
     font-family: "Inter";
     font-weight: 600;
     font-size: 14px;
     line-height: 17px;
     color: #000000;
-  }
-
-  .card-list__subtitle {
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 17px;
-    color: #000000;
-  }
-
-  .card-inner {
-    margin-right: 25px;
-  }
-
-  .card-list__title {
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -37,14 +23,26 @@
     color: #000000;
   }
 
-  .card__list-price {
+  .cardListSub {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+  }
+
+  .cardInner {
+    margin-right: 25px;
+  }
+
+
+  .CardListPrice {
     font-weight: 700;
     font-size: 14px;
     line-height: 17px;
     color: #000000;
   }
 
-  .card-wrap {
+  .CardWrap {
     display: flex;
     justify-content: space-between;
     padding-bottom: 34px;
@@ -56,13 +54,13 @@
   }
 }
 
-.card-button__wrap {
+.ButtonInner {
   border: none;
   background: inherit;
   cursor: pointer;
 }
 
-.card__list-sub {
+.CardListSub {
   font-weight: 500;
   font-size: 11px;
   line-height: 13px;

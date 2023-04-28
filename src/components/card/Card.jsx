@@ -1,5 +1,5 @@
 import React from "react";
-import "./card.module.scss";
+import styles from "./card.module.scss";
 
 function Card({name, type, image, price}) {
 
@@ -9,7 +9,7 @@ function Card({name, type, image, price}) {
 
   return (
     <>
-      <li className="card-list__item">
+      <li className={styles.cardList}>
         <div className="favorite">
           <img src="images/heart-unlike.svg" alt="unlike" />
         </div>
@@ -19,16 +19,16 @@ function Card({name, type, image, price}) {
           className="card-list__img"
           width="133px"
         />
-        <div className="card-list__inner">
-          <p className="card-list__title">{type}</p>
-          <p className="card-list__subtitle">{name}</p>
+        <div className={styles.cardInner}>
+          <p className={styles.cardListTitle}>{type}</p>
+          <p className={styles.cardListSub}>{name}</p>
         </div>
-        <div className="card-wrap">
-          <div className="card-inner">
-            <span className="card__list-sub">Цена:</span>
-            <p className="card__list-price">{price} руб.</p>
+        <div className={styles.CardWrap}>
+          <div className={styles.cardInner}>
+            <span className={styles.CardListSub}>Цена:</span>
+            <p className={styles.CardListPrice}>{price} руб.</p>
           </div>
-          <button className="card-button__wrap" onClick={onClickBtn}>
+          <button className={styles.ButtonInner} onClick={onClickBtn}>
             <img src="/images/add-item.svg" alt="" />
           </button>
         </div>
