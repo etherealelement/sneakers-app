@@ -1,4 +1,4 @@
-.overlay {
+.Overlay {
   position: absolute;
   display: flex;
   justify-content: flex-end;
@@ -10,7 +10,7 @@
   z-index: 1;
 }
 
-.drawer {
+.Drawer {
   text-align: right;
   display: flex;
   flex-direction: column;
@@ -22,7 +22,7 @@
   background: #ffffff;
   box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
 
-  .drawer__title {
+  .DrawerTitle {
     display: flex;
     justify-content: space-between;
     text-align: left;
@@ -37,7 +37,7 @@
 
 
 
-.cart__item {
+.CartItem{
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -47,13 +47,13 @@
   padding: 30px 20px 30px 20px;
   margin-bottom: 20px;
 
-  .cart__item-box {
+  .CartItemBox {
     text-align: left;
     margin-left: 21px;
     margin-right: 12px;
   }
 
-  .cart__item-title {
+  .CartItemTitle{
     text-align: left;
     font-weight: 400;
     font-size: 14px;
@@ -61,13 +61,13 @@
     color: #000000;
     margin-bottom: 8px;
   }
-  .delete-button {
+  .DeleteButton {
     background: #ffffff;
     border: none;
     cursor: pointer;
   }
 
-  .close-btn {
+  .CloseBtn {
     opacity: 0.5;
     background: #ffffff;
     border: 1px solid #dbdbdb;
@@ -80,32 +80,34 @@
   }
 }
 
-.total {
+// total
+
+.Total {
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
 
-.total-1,
-.total-2 {
+.TotalFirst,
+.TotalSecond {
   display: flex;
   margin-bottom: 20px;
 }
 
-.border {
+.Border {
   flex: 1;
   border-bottom: 1px dashed #dfdfdf;
 }
 
-.total__title {
+.TotalTitle {
   margin: 0 10px;
 }
 
-.total__price {
+.TotalPrice{
   margin: 0 7px;
 }
 
-.button__buy {
+.ButtonBuy {
   position: relative;
   margin-top: 24px;
   background: #9dd558;
