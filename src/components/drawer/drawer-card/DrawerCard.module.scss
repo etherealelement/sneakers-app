@@ -1,0 +1,42 @@
+.CartItem{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border: 1px solid #f3f3f3;
+  border-radius: 20px;
+  padding: 30px 20px 30px 20px;
+  margin-bottom: 20px;
+
+  .CartItemBox {
+    text-align: left;
+    margin-left: 21px;
+    margin-right: 12px;
+  }
+
+  .CartItemTitle{
+    text-align: left;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+    margin-bottom: 8px;
+  }
+  .DeleteButton {
+    background: #ffffff;
+    border: none;
+    cursor: pointer;
+  }
+
+  .CloseBtn {
+    opacity: 0.5;
+    background: #ffffff;
+    border: 1px solid #dbdbdb;
+    border-radius: 8px;
+    opacity: 0, 5;
+    &:hover {
+      opacity: 1;
+      transition: all 0.3s;
+    }
+  }
+}
