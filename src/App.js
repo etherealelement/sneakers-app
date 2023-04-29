@@ -46,7 +46,7 @@ const [openCart, setOpenCart] = useState(false)
   return (
     <>
       <div className="wrapper">
-        {openCart ? <Drawer onClose={() => setOpenCart(false)}></Drawer>: null}
+        {openCart && <Drawer onClose={() => setOpenCart(false)}></Drawer>}
         <Header onClickOpen={()=>setOpenCart(true)}></Header>
 
         <main className="main">
