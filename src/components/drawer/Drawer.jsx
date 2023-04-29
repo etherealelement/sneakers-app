@@ -24,15 +24,17 @@ const drawerProduct = [
 
 ]
 
-function Drawer() {
+function Drawer({onClose}) {
   return (
     <>
-      <div style={{ display: "none" }} className={styles.Overlay}>
+      <div className={styles.Overlay}>
         <div className={styles.Drawer}>
           <div className="drawer__inner">
             <h2 className={styles.DrawerTitle}>
               Корзина
+              <button className={styles.ButtonClose}onClick={onClose}>
               <img src="images/btn-close.svg" className="close-btn" alt=""/>
+              </button>
             </h2>
 
             <ul className="cart">

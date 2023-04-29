@@ -1,11 +1,9 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import "./App.scss";
 import "macro-css";
 import Card from "./components/card/Card";
 import Header from "./components/header/Header";
 import Drawer from "./components/drawer/Drawer";
-
 
 const Product = [
   {
@@ -42,11 +40,14 @@ const Product = [
 
 export const App = () => {
 
+
+const [openCart, setOpenCart] = useState(false)
+
   return (
     <>
       <div className="wrapper">
-        <Drawer></Drawer>
-        <Header></Header>
+        {openCart ? <Drawer onClose={() => setOpenCart(false)}></Drawer>: null}
+        <Header onClickOpen={()=>setOpenCart(true)}></Header>
 
         <main className="main">
           <div className="container">

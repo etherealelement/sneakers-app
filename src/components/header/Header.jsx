@@ -1,11 +1,11 @@
 import React from "react";
 import styles from "./header.module.scss"
 
-function Header() {
+function Header({onClickOpen}) {
 	return(
 			<header className={styles.Header}>
           <div className={styles.HeaderContent}>
-            <a href="#">
+            <a href="#logo">
               <img src="/images/logo.png" alt="logo" width={40} height={40} />
             </a>
             <div className={"header__content-wrap"}>
@@ -16,7 +16,9 @@ function Header() {
 
           <div className="header__login">
             <div className={styles.HeaderLoginBox}>
-              <div className={styles.HeaderLoginInner}>
+              <div className={styles.HeaderLoginInner} 
+              onClick={onClickOpen}
+              >
                 <img src="./images/shop-icon.svg" alt="shop" />
                 <span className={styles.HeaderLoginSpn}>1205 руб.</span>
               </div>

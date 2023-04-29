@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./card.module.scss";
 
 function Card({name, type, image, price}) {
@@ -8,6 +8,10 @@ function Card({name, type, image, price}) {
   const handleClick = () => {
     setAdded(!add);
   }
+
+  useEffect(()=> {
+    console.log("Компонент обновлен");
+  },[add])
 
 
   return (
