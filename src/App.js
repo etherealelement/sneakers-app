@@ -17,7 +17,7 @@ const SERVER_URL = "https://644d1633cfdddac9709ca6b1.mockapi.io/items"
 
 useEffect(()=> {
   getProduct();
-}, [products])
+}, [])
 const getProduct = async () => {
   const response = await fetch(SERVER_URL);
   const products = await response.json();
