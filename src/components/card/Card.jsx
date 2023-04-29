@@ -14,7 +14,7 @@ function Card({name, type, image, price}) {
     <>
       <li className={styles.cardList}>
         <div className="favorite" >
-          <img src="images/heart-unlike.svg" alt="unlike" />
+          <img src="images/heart-unlike.svg" alt="unlike"/>
         </div>
         <img
           src={image}
