@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./drawer.module.scss";
 import DrawerCard from "./drawer-card/DrawerCard";
+import CartEmpty from "./cart-empty/CartEmpty";
 
 function Drawer({onClose, drawerProduct, onRemove}) {
   return (
@@ -16,6 +17,7 @@ function Drawer({onClose, drawerProduct, onRemove}) {
             </h2>
 
             <ul className="cart">
+            <CartEmpty></CartEmpty>
             {
               drawerProduct.map(item => {
                 console.log(item.id);
