@@ -69,7 +69,7 @@ export const App = () => {
 
               <ul className="card-list">
                 {products
-                .filter(item => item.name.includes(searchValue))
+                .filter(item => item.name.toLowerCase().includes(searchValue))
                 .map((item) => (
                   <Card
                     type={item.type}
