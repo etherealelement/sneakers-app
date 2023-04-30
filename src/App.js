@@ -68,7 +68,9 @@ export const App = () => {
               </div>
 
               <ul className="card-list">
-                {products.map((item) => (
+                {products
+                .filter(item => item.name.includes(searchValue))
+                .map((item) => (
                   <Card
                     type={item.type}
                     name={item.name}
