@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./DrawerCard.module.scss";
 
-function DrawerCard({type,url,price,name}) {
+function DrawerCard({type,url,price,name, keyId}) {
   return (
     <>
-      <li className={styles.CartItem}>
+      <li className={styles.CartItem} key={keyId}>
         <img
           width="70px"
           height="70px"

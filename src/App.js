@@ -8,6 +8,7 @@ import Drawer from "./components/drawer/Drawer";
 export const App = () => {
   const [products, setProduct] = useState([]);
   const [openCart, setOpenCart] = useState(false);
+  const [searchValue, setSearchValue] = useState("")
   const [cartItems, setCartItems] = useState([]);
 
   // Получение данных с сервера
@@ -26,8 +27,13 @@ export const App = () => {
   const addToCart = (obj) => {
     setCartItems(prev => [...prev, obj]);
   }
-
   console.log(cartItems);
+
+  const onChangeSearchInput = (event) => {
+    setSearchValue(event.target.value)
+    console.log(searchValue);
+  }
+
 
   return (
     <>
@@ -36,6 +42,7 @@ export const App = () => {
           <Drawer
             drawerProduct={cartItems}
             onClose={() => setOpenCart(false)}
+            
           ></Drawer>
         )}
         <Header onClickOpen={() => setOpenCart(true)}></Header>
@@ -44,7 +51,7 @@ export const App = () => {
           <div className="container">
             <section className="products">
               <div className="products-title__wrap">
-                <h1 className="products__title">Все кроссовки</h1>
+                <h1 className="products__title">{searchValue ? `Поиск по запросу: "${searchValue}"`: `Все кроссовки`}</h1>
                 <div className="search-block">
                   <img
                     src="/images/search.svg"
@@ -52,6 +59,7 @@ export const App = () => {
                     className="search"
                   />
                   <input
+                    onChange={onChangeSearchInput}
                     type="text"
                     placeholder="Поиск..."
                     className="products__input"
@@ -65,6 +73,7 @@ export const App = () => {
                     type={item.type}
                     name={item.name}
                     key={item.id}
+                    keyId = {item.id}
                     image={item.image}
                     price={item.price}
                     onClickFavorite={() => console.log("Добавлено в закладки")}

@@ -3,6 +3,7 @@ import styles from "./drawer.module.scss";
 import DrawerCard from "./drawer-card/DrawerCard";
 
 function Drawer({onClose, drawerProduct = []}) {
+  console.log(drawerProduct);
   return (
     <>
       <div className={styles.Overlay}>
@@ -18,6 +19,7 @@ function Drawer({onClose, drawerProduct = []}) {
             <ul className="cart">
             {
               drawerProduct.map(item => {
+                console.log(item.id);
                 return <DrawerCard url={item.image} type={item.type} name={item.name} price={item.price} key={item.id}></DrawerCard>
               })
             }
