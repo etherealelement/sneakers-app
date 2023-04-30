@@ -4,6 +4,7 @@ import "macro-css";
 import Card from "./components/card/Card";
 import Header from "./components/header/Header";
 import Drawer from "./components/drawer/Drawer";
+import axios from "axios";
 
 export const App = () => {
   const [products, setProduct] = useState([]);
@@ -15,13 +16,10 @@ export const App = () => {
   const SERVER_URL = "https://644d1633cfdddac9709ca6b1.mockapi.io/items";
 
   useEffect(() => {
-    getProduct();
-  }, []);
-  const getProduct = async () => {
-    const response = await fetch(SERVER_URL);
-    const products = await response.json();
-    setProduct(products);
-  };
+    axios.get(SERVER_URL).then(res => {
+      setProduct(res.data)
+    })
+  },[])
   //
 
   const addToCart = (obj) => {
@@ -31,7 +29,6 @@ export const App = () => {
 
   const onChangeSearchInput = (event) => {
     setSearchValue(event.target.value)
-    console.log(searchValue);
   }
 
 
