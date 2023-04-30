@@ -2,29 +2,7 @@ import React from "react";
 import styles from "./drawer.module.scss";
 import DrawerCard from "./drawer-card/DrawerCard";
 
-const drawerProduct = [
-  { 
-    imageUrl: "images/shop-icon-2.jpg",
-    title: "Мужские Кроссовки Nike Air Max 270",
-    price: "12 999 руб.",
-    id: 1,
-  },
-  { 
-    imageUrl: "images/shop-icon-3.jpg",
-    title: "Мужские Кроссовки Nike Air Max 270",
-    price: "14 999 руб.",
-    id: 2,
-  },
-  { 
-    imageUrl: "images/shop-icon-4.jpg",
-    title: "Мужские Кроссовки Nike Blazer Mid Suede",
-    price: "7 999 руб.",
-    id: 3,
-  },
-
-]
-
-function Drawer({onClose}) {
+function Drawer({onClose, drawerProduct = []}) {
   return (
     <>
       <div className={styles.Overlay}>
@@ -40,7 +18,7 @@ function Drawer({onClose}) {
             <ul className="cart">
             {
               drawerProduct.map(item => {
-                return <DrawerCard url={item.imageUrl} title={item.title} price={item.price} key={item.id}></DrawerCard>
+                return <DrawerCard url={item.image} type={item.type} name={item.name} price={item.price} key={item.id}></DrawerCard>
               })
             }
             </ul>

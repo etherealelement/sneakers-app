@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./DrawerCard.module.scss";
 
-function DrawerCard({title,url,price}) {
+function DrawerCard({type,url,price,name}) {
   return (
     <>
       <li className={styles.CartItem}>
@@ -12,8 +12,11 @@ function DrawerCard({title,url,price}) {
           alt="shop"
         />
         <div className={styles.CartItemBox}>
+        <p className={styles.CartItemTitle}>
+            {type}
+          </p>
           <p className={styles.CartItemTitle}>
-            {title}
+            {name}
           </p>
           <b className="cart__item-sub">{price}</b>
         </div>

@@ -1,23 +1,23 @@
 import React, { useEffect, useState } from "react";
 import styles from "./card.module.scss";
 
-function Card({name, type, image, price}) {
+function Card({name, type, image, price, onClickFavorite, onClickAdd}) {
 
   const [add, setAdded] = useState(false);
 
   const handleClick = () => {
     setAdded(!add);
+    onClickAdd({name, type, image, price});
   }
 
   useEffect(()=> {
-    console.log("Компонент обновлен");
   },[add])
 
 
   return (
     <>
       <li className={styles.cardList}>
-        <div className="favorite" >
+        <div onClick={onClickFavorite}className="favorite" >
           <img src="images/heart-unlike.svg" alt="unlike"/>
         </div>
         <img
