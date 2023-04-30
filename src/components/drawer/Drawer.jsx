@@ -2,8 +2,7 @@ import React from "react";
 import styles from "./drawer.module.scss";
 import DrawerCard from "./drawer-card/DrawerCard";
 
-function Drawer({onClose, drawerProduct = []}) {
-  console.log(drawerProduct);
+function Drawer({onClose, drawerProduct, onRemove}) {
   return (
     <>
       <div className={styles.Overlay}>
@@ -20,7 +19,7 @@ function Drawer({onClose, drawerProduct = []}) {
             {
               drawerProduct.map(item => {
                 console.log(item.id);
-                return <DrawerCard url={item.image} type={item.type} name={item.name} price={item.price} key={item.id}></DrawerCard>
+                return <DrawerCard url={item.image} type={item.type} name={item.name} price={item.price} onRemove={onRemove}dataId={item}></DrawerCard>
               })
             }
             </ul>

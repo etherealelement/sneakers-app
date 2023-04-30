@@ -1,7 +1,8 @@
 import React from "react";
 import styles from "./DrawerCard.module.scss";
 
-function DrawerCard({type,url,price,name, keyId}) {
+function DrawerCard({type,url,price,name, keyId, onRemove,dataId}) {
+  
   return (
     <>
       <li className={styles.CartItem} key={keyId}>
@@ -20,7 +21,7 @@ function DrawerCard({type,url,price,name, keyId}) {
           </p>
           <b className="cart__item-sub">{price}</b>
         </div>
-        <button className={styles.DeleteButton}>
+        <button className={styles.DeleteButton} onClick={()=> onRemove(dataId.id)}>
           <img src="images/btn-close.svg" className={styles.CloseBtn} alt="" />
         </button>
       </li>
