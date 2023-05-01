@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./CartEmpty.module.scss";
 
-function CartEmpty() {
+function CartEmpty({onClickClose}) {
   return (
     <>
       <div className={styles.cartWrapper}>
@@ -12,7 +12,7 @@ function CartEmpty() {
             Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ.
           </p>
         </div>
-        <button className={styles.cartBtn}>
+        <button onClick={onClickClose}className={styles.cartBtn} >
           <img src="images/left-arrow.svg" alt="images" />
           Вернуться назад
         </button>

@@ -3,7 +3,7 @@ import styles from "./drawer.module.scss";
 import DrawerCard from "./drawer-card/DrawerCard";
 import CartEmpty from "./cart-empty/CartEmpty";
 
-function Drawer({onClose, drawerProduct, onRemove}) {
+function Drawer({ onClose, drawerProduct, onRemove }) {
   return (
     <>
       <div className={styles.Overlay}>
@@ -11,23 +11,28 @@ function Drawer({onClose, drawerProduct, onRemove}) {
           <div className="drawer__inner">
             <h2 className={styles.DrawerTitle}>
               Корзина
-              <button className={styles.ButtonClose}onClick={onClose}>
-              <img src="images/btn-close.svg" className="close-btn" alt=""/>
+              <button className={styles.ButtonClose} onClick={onClose}>
+                <img src="images/btn-close.svg" className="close-btn" alt="" />
               </button>
             </h2>
-
-            <ul className="cart">
-            <CartEmpty></CartEmpty>
-            {
-              drawerProduct.map(item => {
-                console.log(item.id);
-                return <DrawerCard url={item.image} type={item.type} name={item.name} price={item.price} onRemove={onRemove}dataId={item}></DrawerCard>
-              })
-            }
-            </ul>
-          </div>
-
-          <div className={styles.Total}>
+            {drawerProduct.length > 0 ? (
+              <div>
+                <ul className="cart">
+                {drawerProduct.map((item) => {
+                  console.log(item.id);
+                  return (
+                    <DrawerCard
+                      url={item.image}
+                      type={item.type}
+                      name={item.name}
+                      price={item.price}
+                      onRemove={onRemove}
+                      dataId={item}
+                    ></DrawerCard>
+                  );
+                })}
+              </ul>
+              <div className={styles.Total}>
             <div className={styles.TotalFirst}>
               <p className={styles.TotalTitle}>Итого: </p>
               <div className={styles.Border}></div>
@@ -42,6 +47,11 @@ function Drawer({onClose, drawerProduct, onRemove}) {
               Оформить заказ
               <img src="/images/arrow-left.svg" alt="arrow-icon" />
             </button>
+          </div>
+              </div>
+            ) : (
+              <CartEmpty onClickClose={onClose}></CartEmpty>
+            )}
           </div>
         </div>
       </div>
