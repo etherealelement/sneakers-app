@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "../../components/card/Card";
 
-function Favorites({items}) {
+function Favorites({items, onClickAdd}) {
 	console.log(items);
 	return ( 
 		<>
@@ -20,6 +20,8 @@ function Favorites({items}) {
 							key={item.id}
 							image={item.image}
 							price={item.price}
+							isFavorite = {true}
+							{...item}
 							></Card>
 							})}
               </ul>

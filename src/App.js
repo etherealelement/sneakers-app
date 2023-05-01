@@ -66,7 +66,7 @@ export const App = () => {
             </Routes>
 
             <Routes>
-            <Route path="/favorites" element={<Favorites items={cartItems}></Favorites>}>
+            <Route path="/favorites" element={<Favorites items={cartItems} onClickAdd={addToCart}></Favorites>}>
             </Route>
             </Routes>
         </div>

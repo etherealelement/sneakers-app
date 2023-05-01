@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import styles from "./card.module.scss";
 
-function Card({name, type, image, price, onClickFavorite, onClickAdd, keyId}) {
+function Card({name, type, image, price, onClickAdd, keyId, isFavorite}) {
 
   const [add, setAdded] = useState(false);
-  const [isFav, setIsFav] = useState(false)
+  const [isFav, setIsFav] = useState(isFavorite)
 
   const handleClick = () => {
     setAdded(!add);
@@ -39,9 +39,9 @@ const onClickFav = () => {
             <span className={styles.CardListSub}>Цена:</span>
             <p className={styles.CardListPrice}>{price} руб.</p>
           </div>
-          <button className={styles.ButtonInner} onClick={handleClick}>
+          {isFavorite ? null : <button className={styles.ButtonInner} onClick={handleClick}>
             <img src= {add ? "/images/added-btn.svg" : "/images/add-item.svg"} alt={name}/>
-          </button>
+          </button>}
         </div>
       </li>
     </>
