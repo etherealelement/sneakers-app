@@ -1,19 +1,21 @@
 import React from "react";
 import styles from "./header.module.scss";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 function Header({onClickOpen}) {
 	return(
 			<header className={styles.Header}>
+        <Link to="/">
           <div className={styles.HeaderContent}>
-            <a href="#logo">
-              <img src="/images/logo.png" alt="logo" width={40} height={40} />
-            </a>
+            <img src="/images/logo.png" alt="logo" width={40} height={40} />
             <div className={"header__content-wrap"}>
               <h3 className={styles.HeaderTitle}>REACT SNEAKERS</h3>
               <p className={styles.LogoSub}>Магазин лучших кроссовок</p>
             </div>
           </div>
+          </Link>
+          
+          
 
           <div className="header__login">
             <div className={styles.HeaderLoginBox}>
@@ -23,9 +25,11 @@ function Header({onClickOpen}) {
                 <Link><img src="./images/shop-icon.svg" alt="Корзина" /></Link>
                 <span className={styles.HeaderLoginSpn}>1205 руб.</span>
               </div>
-              <a href="#">
-              <Link><img src="./images/favorites-icon.svg" alt="Закладки" /></Link>
-              </a>
+              <Link to="/favorites">
+              <div>
+              <img src="./images/favorites-icon.svg" alt="Закладки" />
+              </div>
+              </Link>
               <Link><img src="./images/login-icon.svg" alt="Личный кабинет" /></Link>
             </div>
           </div>

@@ -1,18 +1,18 @@
 import React, { useContext, useEffect, useState } from "react";
 import "./App.scss";
 import "macro-css";
-import Card from "./components/card/Card";
 import Header from "./components/header/Header";
 import Drawer from "./components/drawer/Drawer";
 import axios from "axios";
-import {Route} from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
+import HomePage from "./pages/home-page/Home";
 
 export const App = () => {
   const [products, setProduct] = useState([]);
   const [openCart, setOpenCart] = useState(false);
   const [searchValue, setSearchValue] = useState("");
   const [cartItems, setCartItems] = useState([]);
-  const [favorites, setFavorites] = useState()
+  const [favorites, setFavorites] = useState();
 
   // Получение данных с сервера
   const SERVER_URL = "https://644d1633cfdddac9709ca6b1.mockapi.io/items";
@@ -35,77 +35,34 @@ export const App = () => {
 
   const onRemoveItem = (id) => {
     axios.delete(`https://644d1633cfdddac9709ca6b1.mockapi.io/cart/${id}`);
-    setCartItems((prev) => prev.filter(item => item.id !== id));
+    setCartItems((prev) => prev.filter((item) => item.id !== id));
   };
- 
+
   const onChangeSearchInput = (event) => {
     setSearchValue(event.target.value);
   };
 
-
-
   return (
     <>
-      <div className="wrapper">
-        {openCart && (
-          <Drawer
-            onRemove={onRemoveItem}
-            drawerProduct={cartItems}
-            onClose={() => setOpenCart(false)}
-          ></Drawer>
-        )}
-        <Header onClickOpen={() => setOpenCart(true)}></Header>
-
-          <Route path="/test"></Route>
-
-        <main className="main">
-          <div className="container">
-            <section className="products">
-              <div className="products-title__wrap">
-                <h1 className="products__title">
-                  {searchValue
-                    ? `Поиск по запросу: "${searchValue}"`
-                    : `Все кроссовки`}
-                </h1>
-                <div className="search-block">
-                  <img
-                    src="/images/search.svg"
-                    alt="Search"
-                    className="search"
-                  />
-                  <input
-                    onChange={onChangeSearchInput}
-                    type="text"
-                    placeholder="Поиск..."
-                    className="products__input"
-                  />
-                </div>
-              </div>
-
-              <ul className="card-list">
-                {products
-                  .filter((item) =>
-                    item.name.toLowerCase().includes(searchValue.toLowerCase())
-                  )
-                  .map((item) => (
-                    <Card
-                      type={item.type}
-                      name={item.name}
-                      key={item.id}
-                      keyId={item.id}
-                      image={item.image}
-                      price={item.price}
-                      onClickFavorite={() =>
-                        console.log("Добавлено в закладки")
-                      }
-                      onClickAdd={(obj) => addToCart(obj)}
-                    ></Card>
-                  ))}
-              </ul>
-            </section>
-          </div>
-        </main>
-      </div>
+        <div className="wrapper">
+          {openCart && (
+            <Drawer
+              onRemove={onRemoveItem}
+              drawerProduct={cartItems}
+              onClose={() => setOpenCart(false)}
+            ></Drawer>
+          )}
+          <Header onClickOpen={() => setOpenCart(true)}></Header>
+            <Routes>
+            <Route path="/" element={<HomePage
+                searchValue={searchValue}
+                onChangeSearchInput={onChangeSearchInput}
+                products={products}
+                addToCart={addToCart}
+              ></HomePage>}>
+            </Route>
+            </Routes>
+        </div>
     </>
   );
 };
