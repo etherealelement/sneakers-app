@@ -6,6 +6,7 @@ import Drawer from "./components/drawer/Drawer";
 import axios from "axios";
 import { Route, Routes } from "react-router-dom";
 import HomePage from "./pages/home-page/Home";
+import Favorites from "./pages/favorites-page/Favorites";
 
 export const App = () => {
   const [products, setProduct] = useState([]);
@@ -53,6 +54,7 @@ export const App = () => {
             ></Drawer>
           )}
           <Header onClickOpen={() => setOpenCart(true)}></Header>
+
             <Routes>
             <Route path="/" element={<HomePage
                 searchValue={searchValue}
@@ -60,6 +62,11 @@ export const App = () => {
                 products={products}
                 addToCart={addToCart}
               ></HomePage>}>
+            </Route>
+            </Routes>
+
+            <Routes>
+            <Route path="/favorites" element={<Favorites items={cartItems}></Favorites>}>
             </Route>
             </Routes>
         </div>
