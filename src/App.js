@@ -32,7 +32,7 @@ export const App = () => {
   };
 
   const onRemoveItem = (id) => {
-    // axios.delete(`https://644d1633cfdddac9709ca6b1.mockapi.io/cart${id}`);
+    axios.delete(`https://644d1633cfdddac9709ca6b1.mockapi.io/cart/${id}`);
     setCartItems((prev) => prev.filter(item => item.id !== id));
   };
 
