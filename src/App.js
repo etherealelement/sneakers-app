@@ -5,6 +5,7 @@ import Card from "./components/card/Card";
 import Header from "./components/header/Header";
 import Drawer from "./components/drawer/Drawer";
 import axios from "axios";
+import {Route} from "react-router-dom";
 
 export const App = () => {
   const [products, setProduct] = useState([]);
@@ -54,6 +55,8 @@ export const App = () => {
           ></Drawer>
         )}
         <Header onClickOpen={() => setOpenCart(true)}></Header>
+
+          <Route path="/test"></Route>
 
         <main className="main">
           <div className="container">

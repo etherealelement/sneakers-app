@@ -1,5 +1,6 @@
 import React from "react";
-import styles from "./header.module.scss"
+import styles from "./header.module.scss";
+import { Link } from "react-router-dom"
 
 function Header({onClickOpen}) {
 	return(
@@ -19,13 +20,13 @@ function Header({onClickOpen}) {
               <div className={styles.HeaderLoginInner} 
               onClick={onClickOpen}
               >
-                <img src="./images/shop-icon.svg" alt="shop" />
+                <Link><img src="./images/shop-icon.svg" alt="Корзина" /></Link>
                 <span className={styles.HeaderLoginSpn}>1205 руб.</span>
               </div>
               <a href="#">
-              <img src="./images/favorites-icon.svg" alt="" />
+              <Link><img src="./images/favorites-icon.svg" alt="Закладки" /></Link>
               </a>
-              <img src="./images/login-icon.svg" alt="" />
+              <Link><img src="./images/login-icon.svg" alt="Личный кабинет" /></Link>
             </div>
           </div>
         </header>
