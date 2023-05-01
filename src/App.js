@@ -11,6 +11,7 @@ export const App = () => {
   const [openCart, setOpenCart] = useState(false);
   const [searchValue, setSearchValue] = useState("");
   const [cartItems, setCartItems] = useState([]);
+  const [favorites, setFavorites] = useState()
 
   // Получение данных с сервера
   const SERVER_URL = "https://644d1633cfdddac9709ca6b1.mockapi.io/items";
@@ -35,10 +36,12 @@ export const App = () => {
     axios.delete(`https://644d1633cfdddac9709ca6b1.mockapi.io/cart/${id}`);
     setCartItems((prev) => prev.filter(item => item.id !== id));
   };
-
+ 
   const onChangeSearchInput = (event) => {
     setSearchValue(event.target.value);
   };
+
+
 
   return (
     <>

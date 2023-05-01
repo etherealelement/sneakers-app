@@ -22,7 +22,9 @@ function Header({onClickOpen}) {
                 <img src="./images/shop-icon.svg" alt="shop" />
                 <span className={styles.HeaderLoginSpn}>1205 руб.</span>
               </div>
+              <a href="#">
               <img src="./images/favorites-icon.svg" alt="" />
+              </a>
               <img src="./images/login-icon.svg" alt="" />
             </div>
           </div>

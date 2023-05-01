@@ -4,6 +4,7 @@ import styles from "./card.module.scss";
 function Card({name, type, image, price, onClickFavorite, onClickAdd, keyId}) {
 
   const [add, setAdded] = useState(false);
+  const [isFav, setIsFav] = useState(false)
 
   const handleClick = () => {
     setAdded(!add);
@@ -13,12 +14,15 @@ function Card({name, type, image, price, onClickFavorite, onClickAdd, keyId}) {
   useEffect(()=> {
   },[add])
 
+const onClickFav = () => {
+  setIsFav(!isFav)
+}
 
   return (
     <>
       <li className={styles.cardList}>
-        <div onClick={onClickFavorite}className="favorite" >
-          <img src="images/heart-unlike.svg" alt="unlike"/>
+        <div onClick={onClickFav}className="favorite" >
+          <img src={isFav ? "/images/heart-liked.svg" : "/images/heart-unlike.svg"} alt="unlike"/>
         </div>
         <img
           src={image}
