@@ -30,8 +30,8 @@ export const App = () => {
   //
 
   const addToCart = (obj) => {
-    if (cartItems.find((item) => item.id === obj.id)) {
-      setCartItems((prev) => prev.filter((item) => item.id !== obj.id));
+    if (cartItems.find((item) => Number(item.id )=== Number(obj.id))) {
+      setCartItems((prev) => prev.filter((item) => Number(item.id) !== Number(obj.id)));
     } else {
       try {
         axios.post(SERVER_URL_POST, obj);
