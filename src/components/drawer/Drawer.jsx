@@ -23,6 +23,7 @@ function Drawer({ onClose, drawerProduct, onRemove }) {
                   return (
                     <DrawerCard
                       url={item.image}
+                      key={item.id}
                       type={item.type}
                       name={item.name}
                       price={item.price}

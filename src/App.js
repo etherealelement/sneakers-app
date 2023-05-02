@@ -30,11 +30,15 @@ export const App = () => {
   //
 
   const addToCart = (obj) => {
-    try {
-      axios.post(SERVER_URL_POST, obj);
-      setCartItems((prev) => [...prev, obj]);
-    } catch (error) {
-      alert(error)
+    if (cartItems.find((item) => item.id === obj.id)) {
+      setCartItems((prev) => prev.filter((item) => item.id !== obj.id));
+    } else {
+      try {
+        axios.post(SERVER_URL_POST, obj);
+        setCartItems((prev) => [...prev, obj]);
+      } catch (error) {
+        alert(error);
+      }
     }
   };
 
@@ -49,31 +53,39 @@ export const App = () => {
 
   return (
     <>
-        <div className="wrapper">
-          {openCart && (
-            <Drawer
-              onRemove={onRemoveItem}
-              drawerProduct={cartItems}
-              onClose={() => setOpenCart(false)}
-            ></Drawer>
-          )}
-          <Header onClickOpen={() => setOpenCart(true)}></Header>
+      <div className="wrapper">
+        {openCart && (
+          <Drawer
+            onRemove={onRemoveItem}
+            drawerProduct={cartItems}
+            onClose={() => setOpenCart(false)}
+          ></Drawer>
+        )}
+        <Header onClickOpen={() => setOpenCart(true)}></Header>
 
-            <Routes>
-            <Route path="/" element={<HomePage
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <HomePage
                 searchValue={searchValue}
                 onChangeSearchInput={onChangeSearchInput}
                 products={products}
                 addToCart={addToCart}
-              ></HomePage>}>
-            </Route>
-            </Routes>
+              ></HomePage>
+            }
+          ></Route>
+        </Routes>
 
-            <Routes>
-            <Route path="/favorites" element={<Favorites items={cartItems} onClickAdd={addToCart}></Favorites>}>
-            </Route>
-            </Routes>
-        </div>
+        <Routes>
+          <Route
+            path="/favorites"
+            element={
+              <Favorites items={cartItems} onClickAdd={addToCart}></Favorites>
+            }
+          ></Route>
+        </Routes>
+      </div>
     </>
   );
 };

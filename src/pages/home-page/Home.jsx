@@ -35,6 +35,7 @@ function HomePage({searchValue, onChangeSearchInput,products,addToCart}) {
                   )
                   .map((item) => (
                     <Card
+                    id={item.id}
                       type={item.type}
                       name={item.name}
                       key={item.id}
