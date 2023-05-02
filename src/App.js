@@ -30,8 +30,12 @@ export const App = () => {
   //
 
   const addToCart = (obj) => {
-    axios.post(SERVER_URL_POST, obj);
-    setCartItems((prev) => [...prev, obj]);
+    try {
+      axios.post(SERVER_URL_POST, obj);
+      setCartItems((prev) => [...prev, obj]);
+    } catch (error) {
+      alert(error)
+    }
   };
 
   const onRemoveItem = (id) => {
