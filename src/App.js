@@ -30,6 +30,7 @@ export const App = () => {
   //
 
   const addToCart = (obj) => {
+    axios.delete(`https://644d1633cfdddac9709ca6b1.mockapi.io/cart/${obj}`);
     if (cartItems.find((item) => Number(item.id )=== Number(obj.id))) {
       setCartItems((prev) => prev.filter((item) => Number(item.id) !== Number(obj.id)));
     } else {
