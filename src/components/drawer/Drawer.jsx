@@ -3,7 +3,7 @@ import styles from "./drawer.module.scss";
 import DrawerCard from "./drawer-card/DrawerCard";
 import CartEmpty from "./cart-empty/CartEmpty";
 import AppContext from "../../helpers/context";
-import axios from "axios";
+// import axios from "axios";
 
 function Drawer({ onClose, drawerProduct, onRemove }) {
   const [isCompleted, setCompleted] = useState(false);
