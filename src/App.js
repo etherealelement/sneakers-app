@@ -1,4 +1,4 @@
-import React, { createContext , useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.scss";
 import "macro-css";
 import Header from "./components/header/Header";
@@ -7,10 +7,7 @@ import axios from "axios";
 import { Route, Routes } from "react-router-dom";
 import HomePage from "./pages/home-page/Home";
 import Favorites from "./pages/favorites-page/Favorites";
-
-const AppContext = createContext({});
-
-console.log(AppContext);
+import AppContext from "./helpers/context";
 
 
 export const App = () => {
@@ -66,7 +63,7 @@ export const App = () => {
 
   return (
     <>
-      <AppContext.Provider>
+      <AppContext.Provider value = {{products, cartItems}}>
       <div className="wrapper">
         {openCart && (
           <Drawer
@@ -97,7 +94,7 @@ export const App = () => {
           <Route
             path="/favorites"
             element={
-              <Favorites items={cartItems} onClickAdd={addToCart}></Favorites>
+              <Favorites  onClickFav={addToCart}></Favorites>
             }
           ></Route>
         </Routes>
