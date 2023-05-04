@@ -1,13 +1,13 @@
-import React, {useContext, useState} from "react";
+import React, {useState} from "react";
 import styles from "./drawer.module.scss";
 import DrawerCard from "./drawer-card/DrawerCard";
 import CartEmpty from "./cart-empty/CartEmpty";
-import AppContext from "../../helpers/context";
+import { useCart } from "../../hooks/useCart";
 // import axios from "axios";
 
 function Drawer({ onClose, drawerProduct, onRemove }) {
+  const {cartItems, setCartItems, TotalPrice} = useCart();
   const [isCompleted, setCompleted] = useState(false);
-  const { setCartItems, cartItems } = useContext(AppContext);
   const [orderId, setOrderId] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
 
@@ -26,12 +26,9 @@ function Drawer({ onClose, drawerProduct, onRemove }) {
   // Счетчик цены.
 
   const PriceTax = cartItems.reduce((acc,item)=> {
-    return acc += item.price * 5 % 100
+    return acc += item.price % 100 * 5
   }, 0)
 
-  const TotalPrice = cartItems.reduce((acc,item) => {
-    return acc += item.price + PriceTax;
-  },0)
 
   return (
     <>
