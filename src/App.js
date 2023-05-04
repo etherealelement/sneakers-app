@@ -17,6 +17,8 @@ export const App = () => {
   const [cartItems, setCartItems] = useState([]);
   const [isLoading, setLoading] = useState(true);
 
+console.log(cartItems);
+
   // Получение данных с сервера
   const SERVER_URL = "https://644d1633cfdddac9709ca6b1.mockapi.io/items";
   const SERVER_URL_POST = "https://644d1633cfdddac9709ca6b1.mockapi.io/cart";
