@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import styles from "./card.module.scss";
 
-function Card({name, id, type, image, price, onClickAdd, keyId, isFavorite}) {
+function Card({name, id, type, image, price, onClickAdd, keyId, isFavorite, added = false}) {
 
-  const [add, setAdded] = useState(false);
+  const [add, setAdded] = useState(added);
   const [isFav, setIsFav] = useState(isFavorite)
 
   const handleClick = () => {

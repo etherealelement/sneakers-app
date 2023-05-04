@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "../../components/card/Card";
 
-function HomePage({searchValue, onChangeSearchInput,products,addToCart}) {
+function HomePage({searchValue, onChangeSearchInput,products,addToCart, cartItems}) {
 	return ( 
 		<>
 		<main className="main">
@@ -46,6 +46,7 @@ function HomePage({searchValue, onChangeSearchInput,products,addToCart}) {
                         console.log("Добавлено в закладки")
                       }
                       onClickAdd={(obj) => addToCart(obj)}
+                      added = {cartItems.some(obj => Number(obj.id) === Number(item.id))}
                     ></Card>
                   ))}
               </ul>

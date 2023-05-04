@@ -20,19 +20,22 @@ export const App = () => {
   const SERVER_URL_POST = "https://644d1633cfdddac9709ca6b1.mockapi.io/cart";
 
   useEffect(() => {
-    axios.get(SERVER_URL).then((res) => {
-      setProduct(res.data);
-    });
-    axios.get(SERVER_URL_POST).then((res) => {
-      setCartItems(res.data);
-    });
+    async function fetchData() {
+     const itemsResponse = await axios.get(SERVER_URL);
+      const cartResponse = await axios.get(SERVER_URL_POST);
+
+      setProduct(itemsResponse.data)
+      setCartItems(cartResponse.data)
+    }
+    fetchData()
   }, []);
   //
 
   const addToCart = (obj) => {
-    axios.delete(`https://644d1633cfdddac9709ca6b1.mockapi.io/cart/${obj}`);
+    
     if (cartItems.find((item) => Number(item.id )=== Number(obj.id))) {
       setCartItems((prev) => prev.filter((item) => Number(item.id) !== Number(obj.id)));
+      axios.delete(`https://644d1633cfdddac9709ca6b1.mockapi.io/cart/${obj.id}`);
     } else {
       try {
         axios.post(SERVER_URL_POST, obj);
@@ -69,6 +72,7 @@ export const App = () => {
             path="/"
             element={
               <HomePage
+                cartItems={cartItems}
                 searchValue={searchValue}
                 onChangeSearchInput={onChangeSearchInput}
                 products={products}
