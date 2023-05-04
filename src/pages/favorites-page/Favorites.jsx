@@ -2,11 +2,10 @@ import React, { useContext } from "react";
 import Card from "../../components/card/Card";
 import AppContext from "../../helpers/context";
 
-
-function Favorites({onClickFav}) {
-	const state = useContext(AppContext);
-	console.log(state);
-
+function Favorites({ onClickAdd}) {
+	
+	const {cartItems} = useContext(AppContext)
+	console.log(cartItems);
 	return ( 
 		<>
 		<main className="main">
@@ -18,10 +17,13 @@ function Favorites({onClickFav}) {
                 </h1>
               </div>
               <ul className="card-list">
-              {[].map((item, index) => {
+              {cartItems.map(item => {
 							return 	<Card name={item.name}
-							key={index}
-							isFavorite = {onClickFav}
+							type={item.type}
+							key={item.id}
+							image={item.image}
+							price={item.price}
+							isFavorite = {true}
 							{...item}
 							></Card>
 							})}

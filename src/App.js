@@ -63,7 +63,7 @@ export const App = () => {
 
   return (
     <>
-      <AppContext.Provider value = {{products, cartItems}}>
+      <AppContext.Provider value = {{cartItems}}>
       <div className="wrapper">
         {openCart && (
           <Drawer
@@ -94,7 +94,7 @@ export const App = () => {
           <Route
             path="/favorites"
             element={
-              <Favorites  onClickFav={addToCart}></Favorites>
+              <Favorites   onClickFav={addToCart}></Favorites>
             }
           ></Route>
         </Routes>
