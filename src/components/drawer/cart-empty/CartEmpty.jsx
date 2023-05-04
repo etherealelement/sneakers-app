@@ -1,18 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./CartEmpty.module.scss";
+import AppContext from "../../../helpers/context";
 
-function CartEmpty({onClickClose}) {
+function CartEmpty({image, title, descr}) {
+  const {setOpenCart} = useContext(AppContext)
+
+
   return (
     <>
       <div className={styles.cartWrapper}>
         <div className={styles.cartInner}>
-          <img src="images/cart.jpg" alt="" />
-          <h3 className={styles.cartTitle}>Корзина пустая</h3>
+          <img src={image} alt="" />
+          <h3 className={styles.cartTitle}>{title}</h3>
           <p className={styles.cartDescr}>
-            Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ.
+            {descr}
           </p>
         </div>
-        <button onClick={onClickClose}className={styles.cartBtn} >
+        <button onClick={() => setOpenCart(false)}className={styles.cartBtn} >
           <img src="images/left-arrow.svg" alt="images" />
           Вернуться назад
         </button>

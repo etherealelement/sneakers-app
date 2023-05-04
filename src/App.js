@@ -61,9 +61,14 @@ export const App = () => {
     setSearchValue(event.target.value);
   };
 
+  const isItemAdded =(id) => {
+    return cartItems.some((obj) => Number(obj.id) === Number(id))
+  }
+
+
   return (
     <>
-      <AppContext.Provider value = {{cartItems}}>
+      <AppContext.Provider value = {{cartItems, isItemAdded, setOpenCart, setCartItems}}>
       <div className="wrapper">
         {openCart && (
           <Drawer
@@ -85,6 +90,7 @@ export const App = () => {
                 products={products}
                 addToCart={addToCart}
                 isLoading={isLoading}
+                hasAdded = {isItemAdded}
               ></HomePage>
             }
           ></Route>

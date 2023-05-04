@@ -1,15 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import Card from "../../components/card/Card";
+import AppContext from "../../helpers/context";
 
 function HomePage({
   searchValue,
   onChangeSearchInput,
   products,
   addToCart,
-  cartItems,
   isLoading,
 })
 {
+
+  const {isItemAdded} = useContext(AppContext)
 
   const RenderItems = () => {
     const filtredItems = products.filter((item) =>
@@ -21,7 +23,7 @@ function HomePage({
       key={index}
         onClickFavorite={() => console.log("Добавлено в закладки")}
         onClickAdd={(obj) => addToCart(obj)}
-        added={cartItems.some((obj) => Number(obj.id) === Number(item.id))}
+        added={isItemAdded(item && item.id)}
         loading={isLoading}
         {...item}
       ></Card>

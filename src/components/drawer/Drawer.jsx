@@ -1,9 +1,19 @@
-import React from "react";
+import React, {useContext, useState} from "react";
 import styles from "./drawer.module.scss";
 import DrawerCard from "./drawer-card/DrawerCard";
 import CartEmpty from "./cart-empty/CartEmpty";
+import AppContext from "../../helpers/context";
 
 function Drawer({ onClose, drawerProduct, onRemove }) {
+  const [isCompleted, setCompleted] = useState(false)
+  const { setCartItems } = useContext(AppContext)
+
+
+  const onClickOrder = () => {
+    setCompleted(true);
+    setCartItems([]);
+  }
+
   return (
     <>
       <div className={styles.Overlay}>
@@ -44,14 +54,17 @@ function Drawer({ onClose, drawerProduct, onRemove }) {
               <div className={styles.Border}></div>
               <p className={styles.TotalPrice}>1074 руб.</p>
             </div>
-            <button className={styles.ButtonBuy}>
+            <button onClick={onClickOrder} className={styles.ButtonBuy}>
               Оформить заказ
               <img src="/images/arrow-left.svg" alt="arrow-icon" />
             </button>
           </div>
               </div>
             ) : (
-              <CartEmpty onClickClose={onClose}></CartEmpty>
+              <CartEmpty image={isCompleted ?  "images/ordered.jpg" : "images/empty-cart.jpg"} 
+              descr={isCompleted ? "Ваш заказ #18 скоро будет передан курьерской доставке": "Добавьте хотябы одну пару кроссовок, чтобы сделать заказ."}
+              title={isCompleted ? "Заказ оформлен" : "Корзина пустая"}
+              ></CartEmpty>
             )}
           </div>
         </div>

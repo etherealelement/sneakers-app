@@ -1,19 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import styles from "./card.module.scss";
 import Loader from "../skeleton-loader/Loader";
+import AppContext from "../../helpers/context";
 
-function Card({name, id, type, image, price, onClickAdd, keyId, isFavorite, added = false, loading = false}) {
+function Card({name, 
+  id, 
+  type, 
+  image, 
+  price, 
+  onClickAdd, 
+  keyId, 
+  isFavorite, 
+  loading = false}) {
 
-  const [add, setAdded] = useState(added);
+
+  const { isItemAdded } = useContext(AppContext);
   const [isFav, setIsFav] = useState(isFavorite)
 
   const handleClick = () => {
-    setAdded(!add);
     onClickAdd({name, type, image, price, keyId, id});
   }
 
-  useEffect(()=> {
-  },[add])
 
 const onClickFav = () => {
   setIsFav(!isFav)
@@ -44,7 +51,7 @@ const onClickFav = () => {
             <p className={styles.CardListPrice}>{price} руб.</p>
           </div>
           {isFavorite ? null : <button className={styles.ButtonInner} onClick={handleClick}>
-            <img src= {add ? "/images/added-btn.svg" : "/images/add-item.svg"} alt={name}/>
+            <img src= {isItemAdded(id) ? "/images/added-btn.svg" : "/images/add-item.svg"} alt={name}/>
           </button>}
         </div>
         </li>
