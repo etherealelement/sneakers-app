@@ -8,6 +8,7 @@ import { Route, Routes } from "react-router-dom";
 import HomePage from "./pages/home-page/Home";
 import Favorites from "./pages/favorites-page/Favorites";
 import AppContext from "./helpers/context";
+import Orders from "./pages/order-page/Orders";
 
 
 export const App = () => {
@@ -103,6 +104,15 @@ console.log(cartItems);
             path="/favorites"
             element={
               <Favorites   onClickFav={addToCart}></Favorites>
+            }
+          ></Route>
+        </Routes>
+
+        <Routes>
+          <Route
+            path="/orders"
+            element={
+              <Orders   onClickFav={addToCart}></Orders>
             }
           ></Route>
         </Routes>

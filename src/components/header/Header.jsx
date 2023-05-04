@@ -37,7 +37,7 @@ function Header({onClickOpen}) {
               <img src="./images/favorites-icon.svg" alt="Закладки" />
               </div>
               </Link>
-              <Link><img src="./images/login-icon.svg" alt="Личный кабинет" /></Link>
+              <Link to="/orders"><img src="./images/login-icon.svg" alt="Личный кабинет" /></Link>
             </div>
           </div>
         </header>
