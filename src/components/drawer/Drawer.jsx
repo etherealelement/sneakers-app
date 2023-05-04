@@ -7,10 +7,11 @@ import AppContext from "../../helpers/context";
 
 function Drawer({ onClose, drawerProduct, onRemove }) {
   const [isCompleted, setCompleted] = useState(false);
-  const { setCartItems, SERVER_URL_POST } = useContext(AppContext);
+  const { setCartItems, cartItems } = useContext(AppContext);
   const [orderId, setOrderId] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
 
+  // Отправка данных, получение инфо-блока.
   const onClickOrder = () => {
     try {
       setIsLoading(true)
@@ -22,6 +23,15 @@ function Drawer({ onClose, drawerProduct, onRemove }) {
       
     }
   }
+  // Счетчик цены.
+
+  const PriceTax = cartItems.reduce((acc,item)=> {
+    return acc += item.price * 5 % 100
+  }, 0)
+
+  const TotalPrice = cartItems.reduce((acc,item) => {
+    return acc += item.price + PriceTax;
+  },0)
 
   return (
     <>
@@ -56,12 +66,12 @@ function Drawer({ onClose, drawerProduct, onRemove }) {
             <div className={styles.TotalFirst}>
               <p className={styles.TotalTitle}>Итого: </p>
               <div className={styles.Border}></div>
-              <p className={styles.TotalPrice}>21 498 руб.</p>
+              <p className={styles.TotalPrice}>{TotalPrice} руб.</p>
             </div>
             <div className={styles.TotalSecond}>
               <p className={styles.TotalTitle}>Налог 5%:</p>
               <div className={styles.Border}></div>
-              <p className={styles.TotalPrice}>1074 руб.</p>
+              <p className={styles.TotalPrice}>{PriceTax} руб.</p>
             </div>
             <button disabled={isLoading} onClick={onClickOrder} className={styles.ButtonBuy}>
               Оформить заказ
