@@ -1,14 +1,13 @@
-import React, { useContext } from "react";
+import React from "react";
 import styles from "./header.module.scss";
 import { Link } from "react-router-dom";
-import AppContext from "../../helpers/context";
+import { useCart } from "../../hooks/useCart";
+
 
 function Header({onClickOpen}) {
 
-  const {cartItems} = useContext(AppContext);
-  const totalPrice = cartItems.reduce((acc,item)=>{
-    return acc += item.price
-  },0)
+  const { TotalPrice} = useCart();
+
 
 
 	return(
@@ -31,7 +30,7 @@ function Header({onClickOpen}) {
               onClick={onClickOpen}
               >
                 <Link><img src="./images/shop-icon.svg" alt="Корзина" /></Link>
-                <span className={styles.HeaderLoginSpn}>{totalPrice} руб.</span>
+                <span className={styles.HeaderLoginSpn}>{TotalPrice} руб.</span>
               </div>
               <Link to="/favorites">
               <div>
