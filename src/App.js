@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { createContext , useEffect, useState } from "react";
 import "./App.scss";
 import "macro-css";
 import Header from "./components/header/Header";
@@ -7,6 +7,11 @@ import axios from "axios";
 import { Route, Routes } from "react-router-dom";
 import HomePage from "./pages/home-page/Home";
 import Favorites from "./pages/favorites-page/Favorites";
+
+const AppContext = createContext({});
+
+console.log(AppContext);
+
 
 export const App = () => {
   const [products, setProduct] = useState([]);
@@ -61,6 +66,7 @@ export const App = () => {
 
   return (
     <>
+      <AppContext.Provider>
       <div className="wrapper">
         {openCart && (
           <Drawer
@@ -96,6 +102,7 @@ export const App = () => {
           ></Route>
         </Routes>
       </div>
+      </AppContext.Provider>
     </>
   );
 };
