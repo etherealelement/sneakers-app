@@ -68,7 +68,7 @@ export const App = () => {
 
   return (
     <>
-      <AppContext.Provider value = {{cartItems, isItemAdded, setOpenCart, setCartItems}}>
+      <AppContext.Provider value = {{cartItems, isItemAdded, setOpenCart, setCartItems, SERVER_URL_POST}}>
       <div className="wrapper">
         {openCart && (
           <Drawer
