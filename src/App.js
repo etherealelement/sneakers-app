@@ -13,7 +13,7 @@ export const App = () => {
   const [openCart, setOpenCart] = useState(false);
   const [searchValue, setSearchValue] = useState("");
   const [cartItems, setCartItems] = useState([]);
-  const [favorites, setFavorites] = useState();
+  const [isLoading, setLoading] = useState(true);
 
   // Получение данных с сервера
   const SERVER_URL = "https://644d1633cfdddac9709ca6b1.mockapi.io/items";
@@ -21,14 +21,18 @@ export const App = () => {
 
   useEffect(() => {
     async function fetchData() {
+      setLoading(true);
      const itemsResponse = await axios.get(SERVER_URL);
       const cartResponse = await axios.get(SERVER_URL_POST);
+
+      setLoading(false);
 
       setProduct(itemsResponse.data)
       setCartItems(cartResponse.data)
     }
     fetchData()
   }, []);
+
   //
 
   const addToCart = (obj) => {
@@ -77,6 +81,7 @@ export const App = () => {
                 onChangeSearchInput={onChangeSearchInput}
                 products={products}
                 addToCart={addToCart}
+                isLoading={isLoading}
               ></HomePage>
             }
           ></Route>
