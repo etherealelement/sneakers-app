@@ -71,7 +71,7 @@ console.log(cartItems);
 
   return (
     <>
-      <AppContext.Provider value = {{cartItems, isItemAdded, setOpenCart, setCartItems, SERVER_URL_POST}}>
+      <AppContext.Provider value = {{cartItems, isItemAdded, setOpenCart, setCartItems, SERVER_URL_POST, addToCart, isLoading}}>
       <div className="wrapper">
         {openCart && (
           <Drawer
