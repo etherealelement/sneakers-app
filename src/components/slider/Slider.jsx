@@ -34,13 +34,13 @@ export const Slider = () => {
           <img src="sneakers-app/images/slider.jpg" alt="slide_image" />
         </SwiperSlide>
         <SwiperSlide>
-          <img  src="images/slider.jpg" alt="slide_image" />
+          <img  src="sneakers-app/images/slider.jpg" alt="slide_image" />
         </SwiperSlide>
         <SwiperSlide>
-          <img  src="images/slider.jpg" alt="slide_image" />
+          <img  src="sneakers-app/images/slider.jpg" alt="slide_image" />
         </SwiperSlide>
         <SwiperSlide>
-          <img   src="images/slider.jpg" alt="slide_image" />
+          <img   src="sneakers-app/images/slider.jpg" alt="slide_image" />
         </SwiperSlide>
 
         <div className="slider-controler">
