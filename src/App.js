@@ -10,6 +10,7 @@ import Favorites from "./pages/favorites-page/Favorites";
 import AppContext from "./helpers/context";
 import Orders from "./pages/order-page/Orders";
 
+
 export const App = () => {
   const [products, setProduct] = useState([]);
   const [openCart, setOpenCart] = useState(false);
@@ -91,7 +92,6 @@ export const App = () => {
         ></Drawer>
         <div className="wrapper">
           <Header onClickOpen={() => setOpenCart(true)}></Header>
-
           <Routes>
             <Route
               path="/"

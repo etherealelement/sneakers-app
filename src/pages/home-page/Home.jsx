@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import Card from "../../components/card/Card";
 import AppContext from "../../helpers/context";
+import { Slider } from "../../components/slider/Slider";
+
 
 function HomePage({
   searchValue,
@@ -32,6 +34,7 @@ function HomePage({
 
   return (
     <>
+    <Slider></Slider>
       <main className="main">
         <div className="container">
           <section className="products">
