@@ -33,7 +33,7 @@ const onClickFav = () => {
           loading ?   <li className={styles.cardItem}><Loader></Loader></li>: <>
           <li className={styles.cardItem}>
             <div onClick={onClickFav}className="favorite" >
-          <img src={isFav ? "heart-liked.svg" : "heart-unlike.svg"} alt="unlike"/>
+          <img src={isFav ? "images/heart-liked.svg" : "images/heart-unlike.svg"} alt="unlike"/>
         </div>
         <img
           src={image}
