@@ -58,6 +58,7 @@
 // total
 
 .Total {
+  margin-top: 20px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -111,4 +112,9 @@
     top: 20px;
     transition: transform 0.2s ease-in-out;
   }
+}
+
+.Cart {
+  overflow: auto;
+  height: 600px;
 }

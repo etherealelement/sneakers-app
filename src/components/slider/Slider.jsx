@@ -1,17 +1,9 @@
 import React from "react";
 import  "./Slider.css";
 import {Swiper, SwiperSlide} from "swiper/react";
-
-
 import "swiper/css/effect-coverflow"
 import "swiper/css/pagination"
-
-
 import { EffectCoverflow, Pagination, Navigation } from "swiper";
-
-
-
-
 
 export const Slider = () => {
 	return (

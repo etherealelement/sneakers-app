@@ -45,7 +45,7 @@ function Drawer({ onClose, drawerProduct, onRemove, opened }) {
             </h2>
             {drawerProduct.length > 0 ? (
               <div>
-                <ul className="cart">
+                <ul className={styles.Cart}>
                   {drawerProduct.map((item) => {
                     console.log(item.id);
                     return (
