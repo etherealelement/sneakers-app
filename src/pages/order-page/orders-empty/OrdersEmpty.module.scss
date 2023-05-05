@@ -1,0 +1,52 @@
+.EmptyCard {
+  padding-top: 240px;
+  padding-bottom: 240px;
+  max-width: 290px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  .EmptyCardTitle {
+		margin-top: 24px;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 11px;
+  }
+  .EmptyCardDescr {
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #000000;
+    opacity: 0.4;
+  }
+  .EmptycartBtn {
+    margin-top: 38px;
+    width: 245px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #ffffff;
+    background: #9dd458;
+    border-radius: 18px;
+    padding: 18px;
+    border: none;
+    img {
+      transform: translateX(-5px);
+    }
+    &:hover {
+      background: lighten(#9dd558, 10%);
+      transition: all 0.3s;
+      img {
+        transform: translateX(-10px);
+        transition: transform 0.2s ease-in-out;
+      }
+    }
+    &:active {
+      background: darken(#9dd558, 5%);
+    }
+  }
+}

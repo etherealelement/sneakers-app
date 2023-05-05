@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import Card from "../../components/card/Card";
 import axios from "axios";
 import AppContext from "../../helpers/context";
+import OrdersEmpty from "./orders-empty/OrdersEmpty";
 
 
 
@@ -27,10 +28,17 @@ function Orders() {
 		<>
 		<main className="main">
           <div className="container">
+            {orders.length <= 0 ? <OrdersEmpty
+              title={"У вас нет заказов"}
+              sub={"Вы нищеброд?"}
+              bescr={"Оформите хотя бы один заказ."}
+              img = {"images/sad-smile.svg"}
+            ></OrdersEmpty> : 
+            <>
             <section className="products">
               <div className="products-title__wrap">
                 <h1 className="products__title">
-                  Мои заказы
+                Мои покупки
                 </h1>
               </div>
               <ul className="card-list">
@@ -46,6 +54,8 @@ function Orders() {
 							})}
               </ul>
             </section>
+            </>
+            }
           </div>
         </main>
 		</>
