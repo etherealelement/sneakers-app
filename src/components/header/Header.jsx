@@ -7,7 +7,7 @@ function Header({ onClickOpen }) {
   const { TotalPrice } = useCart();
   return (
     <header className={styles.Header}>
-      <Link to="/">
+      <Link to="">
         <div className={styles.HeaderContent}>
           <img src="images/logo.png" alt="logo" width={40} height={40} />
           <div className={"header__content-wrap"}>
