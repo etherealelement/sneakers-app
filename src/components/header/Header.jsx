@@ -9,7 +9,7 @@ function Header({ onClickOpen }) {
     <header className={styles.Header}>
       <Link to="/">
         <div className={styles.HeaderContent}>
-          <img src="/images/logo.png" alt="logo" width={40} height={40} />
+          <img src="images/logo.png" alt="logo" width={40} height={40} />
           <div className={"header__content-wrap"}>
             <h3 className={styles.HeaderTitle}>REACT SNEAKERS</h3>
             <p className={styles.LogoSub}>Магазин лучших кроссовок</p>
