@@ -73,13 +73,15 @@ console.log(cartItems);
     <>
       <AppContext.Provider value = {{cartItems, isItemAdded, setOpenCart, setCartItems, SERVER_URL_POST, addToCart, isLoading}}>
       <div className="wrapper">
-        {openCart && (
-          <Drawer
+      <Drawer
             onRemove={onRemoveItem}
             drawerProduct={cartItems}
             onClose={() => setOpenCart(false)}
+            opened = {openCart}
           ></Drawer>
-        )}
+
+
+        
         <Header onClickOpen={() => setOpenCart(true)}></Header>
 
         <Routes>

@@ -1,5 +1,6 @@
 .Overlay {
   position: absolute;
+  visibility: hidden;
   display: flex;
   justify-content: flex-end;
   left: 0;
@@ -8,6 +9,10 @@
   min-height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
+}
+
+.OverlayVisible { 
+  visibility: visible;
 }
 
 .Drawer {

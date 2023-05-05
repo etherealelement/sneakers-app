@@ -7,7 +7,7 @@ import OrdersEmpty from "./orders-empty/OrdersEmpty";
 
 
 function Orders() {
-  const {addToCart, isItemAdded} = useContext(AppContext)
+  const { isItemAdded} = useContext(AppContext)
   const [orders, setOrders] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 

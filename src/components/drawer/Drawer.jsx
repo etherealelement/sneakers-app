@@ -5,7 +5,7 @@ import CartEmpty from "./cart-empty/CartEmpty";
 import { useCart } from "../../hooks/useCart";
 // import axios from "axios";
 
-function Drawer({ onClose, drawerProduct, onRemove }) {
+function Drawer({ onClose, drawerProduct, onRemove, opened }) {
   const {cartItems, setCartItems, TotalPrice} = useCart();
   const [isCompleted, setCompleted] = useState(false);
   const [orderId, setOrderId] = useState(null)
@@ -32,7 +32,7 @@ function Drawer({ onClose, drawerProduct, onRemove }) {
 
   return (
     <>
-      <div className={styles.Overlay}>
+      <div className={`${styles.Overlay} ${opened ? styles.OverlayVisible : ""}`}>
         <div className={styles.Drawer}>
           <div className="drawer__inner">
             <h2 className={styles.DrawerTitle}>
