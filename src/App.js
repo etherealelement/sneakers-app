@@ -94,7 +94,7 @@ export const App = () => {
           <Header onClickOpen={() => setOpenCart(true)}></Header>
           <Routes>
             <Route
-              path=""
+              path="homepage"
               element={
                 <HomePage
                   cartItems={cartItems}
