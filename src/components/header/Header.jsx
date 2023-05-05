@@ -25,12 +25,12 @@ function Header({ onClickOpen }) {
             </Link>
             <span className={styles.HeaderLoginSpn}>{TotalPrice} руб.</span>
           </div>
-          <Link to="/favorites">
+          <Link to="favorites">
             <div>
               <img src="images/favorites-icon.svg" alt="Закладки" />
             </div>
           </Link>
-          <Link to="/orders">
+          <Link to="orders">
             <img src="images/login-icon.svg" alt="Личный кабинет" />
           </Link>
         </div>
