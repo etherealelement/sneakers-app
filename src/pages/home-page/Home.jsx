@@ -45,7 +45,7 @@ function HomePage({
                   : `Все кроссовки`}
               </h1>
               <div className="search-block">
-                <img src="/images/search.svg" alt="Search" className="search" />
+                <img src="images/search.svg" alt="Search" className="search" />
                 <input
                   onChange={onChangeSearchInput}
                   type="text"

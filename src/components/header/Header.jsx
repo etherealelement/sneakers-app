@@ -21,17 +21,17 @@ function Header({ onClickOpen }) {
         <div className={styles.HeaderLoginBox}>
           <div className={styles.HeaderLoginInner} onClick={onClickOpen}>
             <Link>
-              <img src="./images/shop-icon.svg" alt="Корзина" />
+              <img src="images/shop-icon.svg" alt="Корзина" />
             </Link>
             <span className={styles.HeaderLoginSpn}>{TotalPrice} руб.</span>
           </div>
           <Link to="/favorites">
             <div>
-              <img src="./images/favorites-icon.svg" alt="Закладки" />
+              <img src="images/favorites-icon.svg" alt="Закладки" />
             </div>
           </Link>
           <Link to="/orders">
-            <img src="./images/login-icon.svg" alt="Личный кабинет" />
+            <img src="images/login-icon.svg" alt="Личный кабинет" />
           </Link>
         </div>
       </div>

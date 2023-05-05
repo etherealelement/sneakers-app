@@ -111,14 +111,14 @@ export const App = () => {
 
           <Routes>
             <Route
-              path="/favorites"
+              path="favorites"
               element={<Favorites onClickFav={addToCart}></Favorites>}
             ></Route>
           </Routes>
 
           <Routes>
             <Route
-              path="/orders"
+              path="orders"
               element={<Orders onClickFav={addToCart}></Orders>}
             ></Route>
           </Routes>

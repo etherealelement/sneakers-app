@@ -33,7 +33,7 @@ const onClickFav = () => {
           loading ?   <li className={styles.cardItem}><Loader></Loader></li>: <>
           <li className={styles.cardItem}>
             <div onClick={onClickFav}className="favorite" >
-          <img src={isFav ? "/images/heart-liked.svg" : "/images/heart-unlike.svg"} alt="unlike"/>
+          <img src={isFav ? "images/heart-liked.svg" : "images/heart-unlike.svg"} alt="unlike"/>
         </div>
         <img
           src={image}
@@ -51,7 +51,7 @@ const onClickFav = () => {
             <p className={styles.CardListPrice}>{price} руб.</p>
           </div>
           {isFavorite ? null : <button className={styles.ButtonInner} onClick={handleClick}>
-            <img src= {isItemAdded(id) ? "/images/added-btn.svg" : "/images/add-item.svg"} alt={name}/>
+            <img src= {isItemAdded(id) ? "images/added-btn.svg" : "images/add-item.svg"} alt={name}/>
           </button>}
         </div>
         </li>

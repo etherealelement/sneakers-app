@@ -78,7 +78,7 @@ function Drawer({ onClose, drawerProduct, onRemove, opened }) {
                     className={styles.ButtonBuy}
                   >
                     Оформить заказ
-                    <img src="/images/arrow-left.svg" alt="arrow-icon" />
+                    <img src="images/arrow-left.svg" alt="arrow-icon" />
                   </button>
                 </div>
               </div>
