@@ -1,5 +1,5 @@
 # React sneakers-app
-### Магазин кроссовок
+### Магазин кроссовок.
 ---
 
 <img src="./public/images/preview.jpg" align="center" style="width: 100%" />
