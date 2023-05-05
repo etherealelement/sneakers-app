@@ -5,7 +5,7 @@
 
 ---
 
-GitHubPages => 
+GitHubPages => https://etherealelement.github.io/sneakers-app/
 
 ---
 
