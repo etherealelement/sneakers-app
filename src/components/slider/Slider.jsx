@@ -31,7 +31,7 @@ export const Slider = () => {
         className="swiper_container"
       >
         <SwiperSlide>
-          <img src="/images/slider.jpg" alt="slide_image" />
+          <img src="sneakers-app/images/slider.jpg" alt="slide_image" />
         </SwiperSlide>
         <SwiperSlide>
           <img  src="images/slider.jpg" alt="slide_image" />
