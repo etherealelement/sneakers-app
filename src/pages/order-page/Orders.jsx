@@ -26,7 +26,6 @@ function Orders() {
 
 	return ( 
 		<>
-		<main className="main">
           <div className="container">
             {orders.length <= 0 ? <OrdersEmpty
               title={"У вас нет заказов"}
@@ -57,7 +56,6 @@ function Orders() {
             </>
             }
           </div>
-        </main>
 		</>
 	)
 }
