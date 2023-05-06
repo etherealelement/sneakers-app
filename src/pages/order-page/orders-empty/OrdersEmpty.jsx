@@ -14,7 +14,7 @@ function OrdersEmpty({title, sub, bescr, img}) {
 			<p className={styles.EmptyCardDescr}>{bescr}</p>
 			<Link to="/">
 			<button className={styles.EmptycartBtn} >
-          <img src={"images/left-arrow.svg"} alt="images" />
+          <img src={"sneakers-app/images/left-arrow.svg"} alt="images" />
           Вернуться назад
         </button>
 			</Link>

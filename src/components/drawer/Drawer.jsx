@@ -40,7 +40,7 @@ function Drawer({ onClose, drawerProduct, onRemove, opened }) {
             <h2 className={styles.DrawerTitle}>
               Корзина
               <button className={styles.ButtonClose} onClick={onClose}>
-                <img src="images/btn-close.svg" className="close-btn" alt="" />
+                <img src="sneakers-app/images/btn-close.svg" className="close-btn" alt="" />
               </button>
             </h2>
             {drawerProduct.length > 0 ? (
@@ -78,14 +78,14 @@ function Drawer({ onClose, drawerProduct, onRemove, opened }) {
                     className={styles.ButtonBuy}
                   >
                     Оформить заказ
-                    <img src="images/arrow-left.svg" alt="arrow-icon" />
+                    <img src="sneakers-app/images/arrow-left.svg" alt="arrow-icon" />
                   </button>
                 </div>
               </div>
             ) : (
               <CartEmpty
                 image={
-                  isCompleted ? "images/ordered.jpg" : "images/empty-cart.jpg"
+                  isCompleted ? "sneakers-app/images/ordered.jpg" : "sneakers-app/images/empty-cart.jpg"
                 }
                 descr={
                   isCompleted

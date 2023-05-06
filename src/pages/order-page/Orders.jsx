@@ -31,7 +31,7 @@ function Orders() {
               title={"У вас нет заказов"}
               sub={"Вы нищеброд?"}
               bescr={"Оформите хотя бы один заказ."}
-              img = {"images/sad-smile.svg"}
+              img = {"sneakers-app/images/sad-smile.svg"}
             ></OrdersEmpty> : 
             <>
             <section className="products">

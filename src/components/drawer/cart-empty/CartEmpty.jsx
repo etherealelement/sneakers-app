@@ -17,7 +17,7 @@ function CartEmpty({image, title, descr}) {
           </p>
         </div>
         <button onClick={() => setOpenCart(false)}className={styles.cartBtn} >
-          <img src="images/left-arrow.svg" alt="images" />
+          <img src="sneakers-app/images/left-arrow.svg" alt="images" />
           Вернуться назад
         </button>
       </div>

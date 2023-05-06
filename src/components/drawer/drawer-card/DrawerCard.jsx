@@ -22,7 +22,7 @@ function DrawerCard({type,url,price,name, keyId, onRemove,dataId}) {
           <b className="cart__item-sub">{price}</b>
         </div>
         <button className={styles.DeleteButton} onClick={()=> onRemove(dataId.id)}>
-          <img src="images/btn-close.svg" className={styles.CloseBtn} alt="" />
+          <img src="sneakers-app/images/btn-close.svg" className={styles.CloseBtn} alt="" />
         </button>
       </li>
     </>

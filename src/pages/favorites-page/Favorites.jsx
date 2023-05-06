@@ -29,7 +29,7 @@ function Favorites({ onClickAdd }) {
             <FavEmpty
               title={"Закладок нет :("}
               sub={"Вы ничего не добавляли в закладки"}
-              img={"images/smiles-img.svg"}
+              img={"sneakers-app/images/smiles-img.svg"}
             ></FavEmpty>
           ) : (
             <>
