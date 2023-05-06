@@ -51,7 +51,7 @@ const onClickFav = () => {
             <p className={styles.CardListPrice}>{price} руб.</p>
           </div>
           {isFavorite ? null : <button className={styles.ButtonInner} onClick={handleClick}>
-            <img src= {isItemAdded(id) ? "sneakers-app/images/added-btn.svg" : "images/add-item.svg"} alt={name}/>
+            <img src= {isItemAdded(id) ? "sneakers-app/images/added-btn.svg" : "sneakers-app/images/add-item.svg"} alt={name}/>
           </button>}
         </div>
         </li>

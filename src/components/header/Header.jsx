@@ -9,7 +9,7 @@ function Header({ onClickOpen }) {
     <header className={styles.Header}>
       <Link to="">
         <div className={styles.HeaderContent}>
-          <img src="sneakers-app/images/logo.png" alt="logo" width={40} height={40} />
+          <img src="images/logo.png" alt="logo" width={40} height={40} />
           <div className={"header__content-wrap"}>
             <h3 className={styles.HeaderTitle}>REACT SNEAKERS</h3>
             <p className={styles.LogoSub}>Магазин лучших кроссовок</p>
@@ -21,17 +21,17 @@ function Header({ onClickOpen }) {
         <div className={styles.HeaderLoginBox}>
           <div className={styles.HeaderLoginInner} onClick={onClickOpen}>
             <Link>
-              <img src="sneakers-app/images/shop-icon.svg" alt="Корзина" />
+              <img src="images/shop-icon.svg" alt="Корзина" />
             </Link>
             <span className={styles.HeaderLoginSpn}>{TotalPrice} руб.</span>
           </div>
           <Link to="favorites">
             <div>
-              <img src="sneakers-app/images/favorites-icon.svg" alt="Закладки" />
+              <img src="images/favorites-icon.svg" alt="Закладки" />
             </div>
           </Link>
           <Link to="orders">
-            <img src="sneakers-app/images/login-icon.svg" alt="Личный кабинет" />
+            <img src="images/login-icon.svg" alt="Личный кабинет" />
           </Link>
         </div>
       </div>
